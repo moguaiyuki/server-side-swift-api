@@ -9,23 +9,26 @@ import Foundation
 import Kitura
 import SwiftSMTP
 
-class GMemosController {
+final class GMemosController {
 
-    var nextId: Int = 0
+    private var nextId: Int = 0
 
     func sendHandler(gMemo: GMemo, completion: @escaping (GMemo?, RequestError?) -> Void) {
-        guard let userId = gMemo.userId else { return }
+        guard let userId = gMemo.userId else { return completion(nil, .notFound) }
         var gMemo = gMemo
+
         User.find(id: userId) { user, error in
             if error != nil {
                 return completion(nil, .notFound)
             }
+
             guard let user = user,
                 let userEmail = user.email,
                 let userName = user.userName,
                 let content = gMemo.content else {
                     return completion(nil, .notFound)
             }
+
             let smtp = SMTP(hostname: "smtp.gmail.com", email: "メールアドレス", password: "パスワード")
             let from = Mail.User(name: "Service Name", email: "メールアドレス")
             let to = Mail.User(name: userName, email: userEmail)
@@ -37,6 +40,7 @@ class GMemosController {
                     print(error)
                 }
             }
+
         }
         gMemo.id = self.nextId
         self.nextId += 1
