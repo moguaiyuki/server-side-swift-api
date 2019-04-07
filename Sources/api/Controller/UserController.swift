@@ -53,8 +53,9 @@ final class UserController {
                 return completion(nil, .internalServerError)
             }
 
-            oldUser.user_id = new.user_id ?? oldUser.user_id
+            oldUser.userName = new.userName ?? oldUser.userName
             oldUser.password = new.password ?? oldUser.password
+            oldUser.email = new.email ?? oldUser.email
 
             oldUser.update(id: id, completion)
         }

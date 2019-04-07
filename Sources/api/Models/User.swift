@@ -11,11 +11,12 @@ import SwiftKueryPostgreSQL
 
 struct User: Codable, Equatable {
     var id: Int?
-    var user_id: String?
+    var userName: String?
     var password: String?
+    var email: String?
 
     static func ==(lhs: User, rhs: User) -> Bool {
-        return (lhs.id == rhs.id) && (lhs.user_id == rhs.user_id)
+        return (lhs.id == rhs.id) && (lhs.userName == rhs.userName)
     }
 }
 

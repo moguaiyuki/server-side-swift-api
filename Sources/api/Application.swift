@@ -31,6 +31,7 @@ public class App {
 
     private func postInit() throws {
         initilazeUserRoutes(app: self)
+        initializeMailRoutes(app: self)
         Persistence.setUp()
         do {
             try User.createTableSync()
@@ -43,7 +44,7 @@ public class App {
 
 final class Persistence {
     static func setUp() {
-        let pool = PostgreSQLConnection.createPool(host: "localhost", port: 5432, options: [.databaseName("userdb")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50))
+        let pool = PostgreSQLConnection.createPool(host: "localhost", port: 5432, options: [.databaseName("hogedb")], poolOptions: ConnectionPoolOptions(initialCapacity: 10, maxCapacity: 50))
         Database.default = Database(pool)
     }
 }
