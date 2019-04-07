@@ -7,7 +7,7 @@
 
 import Foundation
 
-func initializeMailRoutes(app: App) {
+func initializeGMemoRoutes(app: App) {
     let gMemosController = GMemosController()
     app.router.post("/mails/", handler: gMemosController.sendHandler)
 }

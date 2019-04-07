@@ -31,7 +31,7 @@ public class App {
 
     private func postInit() throws {
         initilazeUserRoutes(app: self)
-        initializeMailRoutes(app: self)
+        initializeGMemoRoutes(app: self)
         Persistence.setUp()
         do {
             try User.createTableSync()
