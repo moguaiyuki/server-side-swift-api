@@ -191,6 +191,15 @@
         }
       },
       {
+        "package": "SwiftSMTP",
+        "repositoryURL": "https://github.com/IBM-Swift/Swift-SMTP",
+        "state": {
+          "branch": null,
+          "revision": "496f779a073991609cf3745214e49449d9b5db24",
+          "version": "5.1.0"
+        }
+      },
+      {
         "package": "SwiftMetrics",
         "repositoryURL": "https://github.com/RuntimeTools/SwiftMetrics.git",
         "state": {
