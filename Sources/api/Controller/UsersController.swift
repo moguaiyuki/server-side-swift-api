@@ -8,7 +8,7 @@
 import Foundation
 import Kitura
 
-final class UserController {
+final class UsersController {
 
     // MARK:- Property
 

@@ -8,12 +8,12 @@
 import Foundation
 
 func initilazeUserRoutes(app: App) {
-    let userController = UserController()
+    let usersController = UsersController()
     
-    app.router.get("/users/", handler: userController.getAllHandler)
-    app.router.get("/users/", handler: userController.getOneHandler)
-    app.router.post("/users/", handler: userController.storeHandler)
-    app.router.delete("/users/", handler: userController.deleteAllHandler)
-    app.router.delete("/users/", handler: userController.deleteOneHandler)
-    app.router.patch("/users/", handler: userController.updateHandler)
+    app.router.get("/users/", handler: usersController.getAllHandler)
+    app.router.get("/users/", handler: usersController.getOneHandler)
+    app.router.post("/users/", handler: usersController.storeHandler)
+    app.router.delete("/users/", handler: usersController.deleteAllHandler)
+    app.router.delete("/users/", handler: usersController.deleteOneHandler)
+    app.router.patch("/users/", handler: usersController.updateHandler)
 }

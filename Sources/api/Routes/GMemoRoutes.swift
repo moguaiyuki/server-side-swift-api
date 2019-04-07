@@ -9,5 +9,5 @@ import Foundation
 
 func initializeGMemoRoutes(app: App) {
     let gMemosController = GMemosController()
-    app.router.post("/mails/", handler: gMemosController.sendHandler)
+    app.router.post("/gmemo/", handler: gMemosController.sendHandler)
 }
